@@ -3,12 +3,7 @@ class Key
   attr_reader :key_hash
 
   def initialize
-    @key_hash = {
-      a: 0,
-      b: 0,
-      c: 0,
-      d: 0
-    }
+    @key_hash = {}
   end
 
   def generate_random_key
