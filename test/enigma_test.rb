@@ -7,20 +7,32 @@ class EnigmaTest < Minitest::Test
     assert_instance_of Enigma, enigma
   end
 
-  def test_it_can_encrypt_messages
+  def test_it_can_encrypt_messages_with_key_and_date_given
     enigma = Enigma.new
 
-    actual = enigma.encrypt("hello world")
+    actual = enigma.encrypt("hello world", "02715", "040895")
 
-    assert_equal nil, actual
+    expected = {
+      encryption: "keder ohulw",
+      key: "02715",
+      date: "040895"
+    }
+
+    assert_equal expected, actual
   end
 
-  def test_it_can_decrypt_messages
+  def test_it_can_decrypt_messages_with_key_and_date_given
     enigma = Enigma.new
 
-    actual = enigma.decrypt("hello world", 02715)
+    actual = enigma.decrypt("keder ohulw", "02715", "040895")
 
-    assert_equal nil, actual
+    expected = {
+      decryption: "hello world",
+      key: "02715",
+      date: "040895"
+    }
+
+    assert_equal expected, actual
   end
 
 end
