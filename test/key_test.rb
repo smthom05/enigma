@@ -7,6 +7,12 @@ class KeyTest < Minitest::Test
     assert_instance_of Key, key
   end
 
+  def test_it_starts_with_an_empty_key_hash
+    key = Key.new
+
+    assert_equal ({}), key.key_hash
+  end
+
   def test_it_can_generate_a_random_key
     key = Key.new
 
@@ -31,5 +37,12 @@ class KeyTest < Minitest::Test
     }
 
     assert_equal expected, actual
+  end
+
+  def test_it_can_generate_a_key_hash_when_its_not_given_a_key
+    key = Key.new
+
+    expected = key.generate_key_hash
+    assert_equal expected, key.key_hash
   end
 end
