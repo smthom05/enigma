@@ -10,4 +10,5 @@ require './lib/enigma'
 require './lib/key'
 
 # Gems or Built in Ruby stuff
+require 'pry'
 require 'date'

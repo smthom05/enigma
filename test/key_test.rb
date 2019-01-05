@@ -11,8 +11,10 @@ class KeyTest < Minitest::Test
     key = Key.new
 
     actual = key.generate_random_key
+    range = ("00001".."99999")
 
     assert_instance_of String, actual
     assert_equal 5, actual.length
+    assert_equal true, range.member?(actual)
   end
 end

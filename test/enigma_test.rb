@@ -16,7 +16,7 @@ class EnigmaTest < Minitest::Test
   end
 
   def test_it_can_encrypt_messages_with_key_and_date_given
-    skip
+    # skip
     enigma = Enigma.new
 
     actual = enigma.encrypt("hello world", "02715", "040895")
