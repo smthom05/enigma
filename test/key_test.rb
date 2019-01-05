@@ -38,4 +38,11 @@ class KeyTest < Minitest::Test
 
     assert_equal expected, actual
   end
+
+  def test_it_can_generate_a_key_hash_when_its_not_given_a_key
+    key = Key.new
+
+    expected = key.generate_key_hash
+    assert_equal expected, key.key_hash
+  end
 end

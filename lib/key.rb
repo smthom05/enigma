@@ -15,7 +15,7 @@ class Key
     key
   end
 
-  def generate_key_hash(key)
+  def generate_key_hash(key = generate_random_key)
     @key_hash = {
       a: key[0,2].to_i,
       b: key[1,2].to_i,
