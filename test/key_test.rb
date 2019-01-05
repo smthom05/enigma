@@ -18,7 +18,7 @@ class KeyTest < Minitest::Test
     assert_equal true, range.member?(actual)
   end
 
-  def test_it_can_generate_key_hash_given_a_hash
+  def test_it_can_generate_key_hash_given_a_key
     key = Key.new
 
     actual = key.generate_key_hash("02715")
