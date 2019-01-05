@@ -12,7 +12,7 @@ class Offset
     offset = Date.today.strftime("%d%m%y")
   end
 
-  def generate_offset_hash(date = offset.generate_offset)
+  def generate_offset_hash(date = generate_offset)
     date_squared = date.to_i ** 2
     offset_values = date_squared.to_s[-4,4]
     @offset_hash = {

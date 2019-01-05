@@ -25,6 +25,7 @@ class OffsetTest < Minitest::Test
   end
 
   def test_it_can_generate_an_offset_hash_given_a_date
+    skip
     offset = Offset.new
 
     actual = offset.generate_offset_hash("040895")
@@ -40,6 +41,10 @@ class OffsetTest < Minitest::Test
   end
 
   def test_it_can_generate_an_offset_hash_using_todays_date
-    skip
+    offset = Offset.new
+
+    expected = offset.generate_offset_hash
+
+    assert_equal expected, offset.offset_hash
   end
 end
