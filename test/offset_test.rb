@@ -7,10 +7,10 @@ class OffsetTest < Minitest::Test
     assert_instance_of Offset, offset
   end
 
-  def test_it_starts_with_hash_values_of_0
+  def test_it_initializes_an_empty_hash
     offset = Offset.new
 
-    assert_equal 0, offset.offset_hash.values.first
+    assert_equal ({}), offset.offset_hash
   end
 
   def test_it_can_generate_an_offset_using_todays_date
@@ -27,7 +27,7 @@ class OffsetTest < Minitest::Test
   def test_it_can_generate_an_offset_hash_given_a_date
     offset = Offset.new
 
-    actual = offset.generate_offset("040895")
+    actual = offset.generate_offset_hash("040895")
 
     expected = {
       a: 1,
@@ -40,6 +40,6 @@ class OffsetTest < Minitest::Test
   end
 
   def test_it_can_generate_an_offset_hash_using_todays_date
-
+    skip
   end
 end
