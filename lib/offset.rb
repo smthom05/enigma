@@ -1,7 +1,5 @@
-class Encryption
-
+class Offset
   def initialize
   end
-
   
 end
