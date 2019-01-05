@@ -6,4 +6,6 @@ class EncryptionTest < Minitest::Test
 
     assert_instance_of Encryption, encryption
   end
+
+  
 end
