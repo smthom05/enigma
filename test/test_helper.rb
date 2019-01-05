@@ -9,6 +9,7 @@ require 'minitest/pride'
 require './lib/enigma'
 require './lib/key'
 require './lib/offset'
+require './lib/shift'
 
 # Gems or Built in Ruby stuff
 require 'pry'
