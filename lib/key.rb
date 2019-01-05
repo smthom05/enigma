@@ -1,6 +1,7 @@
 class Key
 
   def initialize
+
   end
 
   def generate_random_key
@@ -11,5 +12,9 @@ class Key
     end
     key
   end
-  
+
+  def generate_key_hash
+
+  end
+
 end
