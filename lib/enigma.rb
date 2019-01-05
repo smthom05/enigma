@@ -9,7 +9,6 @@ class Enigma
   end
 
   def encrypt(message, key = @key.generate_random_key, date = @date.strftime("%d%m%y"))
-    binding.pry
     encryption_hash = {}
   end
 
