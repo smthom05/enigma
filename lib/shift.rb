@@ -1,6 +1,6 @@
 class Shift
 
-  attr_reader :shift_hash
+  attr_accessor :shift_hash
 
   def initialize
     @shift_hash = {}
@@ -10,6 +10,7 @@ class Shift
     key_hash.each do |key, key_value|
       @shift_hash[key] = key_value + offset_hash[key]
     end
+    @shift_hash
   end
 
 end
