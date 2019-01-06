@@ -20,8 +20,8 @@ module Encryption
         encrypted_word += new_character_sets_hash[:d].values_at(index).pop
         i = 0
       end
-      encrypted_word
     end
+    encrypted_word
   end
 
   def gather_hashes(key, date)
