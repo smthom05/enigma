@@ -46,6 +46,20 @@ class EnigmaTest < Minitest::Test
     assert_equal expected, actual
   end
 
+  def test_it_can_encrypt_messages_without_key_or_date
+    enigma = Enigma.new
+
+    actual = enigma.encrypt("hello world")
+
+    expected = {
+      encryption: "nfhauasdxm ",
+      key: "02715",
+      date: "060119"
+    }
+
+    assert_equal expected, actual
+  end
+
   def test_it_can_decrypt_messages_with_key_and_date_given
     skip
     enigma = Enigma.new
