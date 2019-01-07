@@ -15,8 +15,9 @@ class EnigmaTest < Minitest::Test
     assert_equal expected, enigma.character_set
   end
 
-  def test_it_can_encrypt_messages_with_key_and_date_given
+  # Enigma#encrypt method tests
 
+  def test_it_can_encrypt_messages_with_key_and_date_given
     enigma = Enigma.new
 
     actual = enigma.encrypt("hello world", "02715", "040895")
@@ -30,8 +31,38 @@ class EnigmaTest < Minitest::Test
     assert_equal expected, actual
   end
 
-  def test_it_can_decrypt_messages_with_key_and_date_given
+  # Test built on 01/06/19
+  def test_it_can_encrypt_messages_with_key_without_date
+    enigma = Enigma.new
+
+    actual = enigma.encrypt("hello world", "02715")
+
+    expected = {
+      encryption: "nfhauasdxm ",
+      key: "02715",
+      date: "060119"
+    }
+
+    assert_equal expected, actual
+  end
+
+  def test_it_can_encrypt_messages_without_key_or_date
     skip
+    enigma = Enigma.new
+
+    actual = enigma.encrypt("hello world")
+
+    expected = {
+      encryption: "nfhauasdxm ",
+      key: "02715",
+      date: "060119"
+    }
+
+    assert_equal expected, actual
+  end
+
+  def test_it_can_decrypt_messages_with_key_and_date_given
+    
     enigma = Enigma.new
 
     actual = enigma.decrypt("keder ohulw", "02715", "040895")
