@@ -1,4 +1,4 @@
-require './test/test_helper'
+require './lib/modules/runner_helper'
 
 class Enigma
   include Encryption

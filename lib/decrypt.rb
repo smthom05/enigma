@@ -1,4 +1,5 @@
-require './test/test_helper'
+require './lib/enigma'
+
 enigma = Enigma.new
 
 handle = File.open(ARGV[0], 'r')
