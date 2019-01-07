@@ -85,7 +85,7 @@ class EnigmaTest < Minitest::Test
     actual = enigma.decrypt("keder ohulw", "02715")
 
     expected = {
-      decryption: "",
+      decryption: "edhplzssok ",
       key: "02715",
       date: "060119"
     }

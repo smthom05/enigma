@@ -9,10 +9,10 @@ class Enigma
   def initialize
     @character_set = ("a".."z").to_a << " "
     @key = Key.new
-    @date = Date.today
+    @date = Offset.new
   end
 
-  def encrypt(message, key = @key.generate_random_key, date = @date.strftime("%d%m%y"))
+  def encrypt(message, key = @key.generate_random_key, date = @date.generate_offset)
     encrypted_message = encrypt_message(message, key, date)
     encryption_hash = {
       encryption: encrypted_message,
@@ -21,7 +21,7 @@ class Enigma
     }
   end
 
-  def decrypt(message, key, date = @date.strftime("%d$m%y"))
+  def decrypt(message, key, date = date = @date.generate_offset)
     decrypted_message = decrypt_message(message, key, date)
     decryption_hash = {
       decryption: decrypted_message,
