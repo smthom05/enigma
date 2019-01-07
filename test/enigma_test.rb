@@ -33,33 +33,31 @@ class EnigmaTest < Minitest::Test
 
   # Test built on 01/06/19
   def test_it_can_encrypt_messages_with_key_without_date
-    skip
     enigma = Enigma.new
+    date = Offset.new
 
     actual = enigma.encrypt("hello world", "02715")
 
     expected = {
       encryption: "nfhauasdxm ",
       key: "02715",
-      date: "060119"
+      date: date.generate_offset
     }
 
     assert_equal expected, actual
   end
 
   def test_it_can_encrypt_messages_without_key_or_date
-    skip
     enigma = Enigma.new
+    key = Key.new
+    date = Offset.new
+    date = date.generate_offset
 
     actual = enigma.encrypt("hello world")
 
-    expected = {
-      encryption: "nfhauasdxm ",
-      key: "02715",
-      date: "060119"
-    }
-
-    assert_equal expected, actual
+    assert_equal 11, actual[:encryption].length
+    assert_equal 5, actual[:key].length
+    assert_equal date, actual[:date]
   end
 
   # Enigma#decrypt method tests
