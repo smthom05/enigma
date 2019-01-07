@@ -87,7 +87,7 @@ class EnigmaTest < Minitest::Test
     expected = {
       decryption: "edhplzssok ",
       key: "02715",
-      date: "060119"
+      date: "070119"
     }
 
     assert_equal expected, actual
