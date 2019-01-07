@@ -1,0 +1,6 @@
+require './lib/enigma'
+require './lib/key'
+require './lib/offset'
+require './lib/shift'
+require './lib/modules/encryption'
+require './lib/modules/decryption'

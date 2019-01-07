@@ -1,5 +1,4 @@
-require './lib/modules/encryption'
-require './lib/modules/decryption'
+require './lib/modules/runner_helper'
 
 class Enigma
   include Encryption
