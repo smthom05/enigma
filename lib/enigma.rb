@@ -1,7 +1,9 @@
 require './lib/modules/encryption'
+require './lib/modules/decryption'
 
 class Enigma
   include Encryption
+  include Decryption
 
   attr_reader :character_set
   def initialize
