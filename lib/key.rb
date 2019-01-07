@@ -7,14 +7,14 @@ class Key
   end
 
   def generate_random_key
-    key = ("00001".."99999").to_a.sample
-    if key.length != 5
-      key.rjust(5,'0')
-    end
-    key
+    key_range = ("00001".."99999")
+    key = key_range.to_a.sample
   end
 
   def generate_key_hash(key = generate_random_key)
+    if key.length != 5
+      key = key.rjust(5,'0')
+    end
     @key_hash = {
       a: key[0,2].to_i,
       b: key[1,2].to_i,
