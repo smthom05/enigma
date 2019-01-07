@@ -1,27 +1,28 @@
-module Encryption
+module Decryption
 
-  def encrypt_message(message, key, date)
+  def decrypt_message(message, key, date)
     new_character_sets_hash = gather_hashes(key,date)
-    encrypted_message = ""
+    decrypted_message = ""
 
     i = 0
     message.each_char do |char|
       index = character_set.index(char)
+      binding.pry
       if i == 0
-        encrypted_message += new_character_sets_hash[:a].values_at(index).pop
+        decrypted_message += new_character_sets_hash[:a].values_at(index).pop
         i += 1
       elsif i == 1
-        encrypted_message += new_character_sets_hash[:b].values_at(index).pop
+        decrypted_message += new_character_sets_hash[:b].values_at(index).pop
         i += 1
       elsif i == 2
-        encrypted_message += new_character_sets_hash[:c].values_at(index).pop
+        decrypted_message += new_character_sets_hash[:c].values_at(index).pop
         i += 1
       elsif i == 3
-        encrypted_message += new_character_sets_hash[:d].values_at(index).pop
+        decrypted_message += new_character_sets_hash[:d].values_at(index).pop
         i = 0
       end
     end
-    encrypted_message
+    decrypted_message
   end
 
   def gather_hashes(key, date)
@@ -34,7 +35,7 @@ module Encryption
   def generate_new_character_sets(shift)
     character_sets_hash = {}
     shift.each do |k,v|
-      character_sets_hash[k] = character_set.rotate(v)
+      character_sets_hash[k] = character_set.rotate(-v)
     end
     character_sets_hash
   end

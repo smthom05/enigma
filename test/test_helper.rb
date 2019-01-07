@@ -11,6 +11,7 @@ require './lib/key'
 require './lib/offset'
 require './lib/shift'
 require './lib/modules/encryption'
+require './lib/modules/decryption'
 
 # Gems or Built in Ruby stuff
 require 'pry'
