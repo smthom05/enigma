@@ -19,8 +19,13 @@ class Enigma
     }
   end
 
-  def decrypt(message, key, date = Date.today)
-    decryption_hash = {}
+  def decrypt(message, key = key.generate_random_key, date = date.strftime("%d$m%y"))
+    decrypted_message = decrypt_message(message, key, date)
+    decryption_hash = {
+      decryption: decrypted_message,
+      key: key,
+      date: date
+    }
   end
 
 end
